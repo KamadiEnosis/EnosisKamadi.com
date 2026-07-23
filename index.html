@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enosis Kamadi — Clinical Nutritionist, Dietitian & Digital Health Innovator</title>
+<meta name="description" content="Enosis Kamadi — Clinical Nutritionist, Dietitian, Researcher, TVET Trainer, and Founder of NutriPulse. Advancing nutrition science, digital health, and community wellbeing across Africa.">
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy-2:#122c52;
+    --blue:#2f6fed;
+    --blue-2:#5b8ff9;
+    --blue-soft:#eaf1ff;
+    --teal:#0f6e56;
+    --teal-2:#1d9e75;
+    --gold:#c99a3c;
+    --gold-2:#e0b95c;
+    --coral:#ef6a5b;
+    --ivory:#faf9fb;
+    --paper:#ffffff;
+    --ink:#1b1f27;
+    --ink-soft:#4a5160;
+    --line:#e6e8ef;
+    --radius:10px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Georgia','Times New Roman',serif;
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.7;
+  }
+  h1,h2,h3,h4{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--navy);
+    line-height:1.25;
+    font-weight:700;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--blue);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;font-size:14.5px;
+    padding:13px 26px;border-radius:6px;
+    border:1.5px solid transparent;
+    cursor:pointer;transition:.2s ease;
+  }
+  .btn-primary{background:var(--gold);color:var(--navy);}
+  .btn-primary:hover{background:var(--gold-2);}
+  .btn-blue{background:var(--blue);color:#fff;}
+  .btn-blue:hover{background:var(--blue-2);}
+  .btn-outline{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.55);}
+  .btn-outline:hover{background:rgba(255,255,255,.14);}
+  .btn-outline-dark{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-outline-dark:hover{background:var(--navy);color:#fff;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,31,58,.97);
+    backdrop-filter:blur(6px);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:800;color:#fff;font-size:19px;letter-spacing:.02em;
+  }
+  .logo span{color:var(--blue-2);}
+  .nav-links{
+    display:flex;gap:26px;list-style:none;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;font-weight:600;
+  }
+  .nav-links a{color:#e9ecf3;opacity:.88;transition:.2s;}
+  .nav-links a:hover{opacity:1;color:var(--blue-2);}
+  .menu-btn{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+  @media(max-width:920px){
+    .nav-links{display:none;}
+    .menu-btn{display:block;}
+    .nav-cta-desktop{display:none;}
+  }
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(155deg,var(--navy) 0%,var(--navy-2) 45%,var(--blue) 130%);
+    color:#fff;padding:88px 0 96px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    border:1px solid rgba(91,143,249,.22);border-radius:50%;
+  }
+  .hero::before{
+    content:"";position:absolute;left:-100px;bottom:-140px;width:320px;height:320px;
+    border:1px solid rgba(224,185,92,.16);border-radius:50%;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;
+    position:relative;z-index:1;
+  }
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{
+    color:#fff;font-size:44px;margin:14px 0 18px;letter-spacing:-.01em;
+  }
+  .hero h1 em{color:var(--gold-2);font-style:normal;}
+  .hero p.lead{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:#d7deec;font-size:17px;max-width:560px;margin-bottom:30px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-tags{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .tag{
+    font-size:12.5px;font-weight:700;letter-spacing:.03em;
+    padding:7px 14px;border-radius:20px;
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
+    color:#e9ecf3;
+  }
+  .portrait-frame{
+    aspect-ratio:4/5;border-radius:14px;
+    background:linear-gradient(145deg,var(--blue) 0%,var(--teal) 55%,var(--navy-2) 100%);
+    border:1px solid rgba(224,185,92,.4);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .portrait-frame .initials{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:72px;font-weight:800;color:rgba(255,255,255,.94);
+    letter-spacing:.02em;
+  }
+  .portrait-frame .cap{
+    position:absolute;bottom:18px;left:18px;right:18px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12.5px;color:#eef1f8;background:rgba(11,31,58,.55);
+    padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.18);
+  }
+
+  /* SECTION shells */
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:30px;margin:10px 0 12px;}
+  .section-head p{color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;font-size:15.5px;}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* ABOUT */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{margin-bottom:16px;font-size:16px;color:#333;}
+  .cred-list{list-style:none;margin-top:8px;}
+  .cred-list li{
+    display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;
+  }
+  .cred-list li:last-child{border-bottom:none;}
+  .cred-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--blue);
+    margin-top:7px;flex-shrink:0;
+  }
+  .cred-list b{color:var(--navy);display:block;font-size:15px;margin-bottom:2px;}
+  .cred-list span{color:var(--ink-soft);}
+
+  /* EXPERTISE CARDS */
+  .expertise{background:var(--blue-soft);}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:860px){.card-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.card-grid{grid-template-columns:1fr;}}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;transition:.2s;
+  }
+  .card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,111,237,.10);}
+  .card-icon{
+    width:44px;height:44px;border-radius:9px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    color:var(--gold-2);font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:16px;
+  }
+  .card:nth-child(2) .card-icon{background:var(--blue);color:#fff;}
+  .card:nth-child(4) .card-icon{background:var(--teal);color:#fff;}
+  .card:nth-child(6) .card-icon{background:var(--coral);color:#fff;}
+  .card h3{font-size:17px;margin-bottom:8px;}
+  .card p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:var(--ink-soft);}
+
+  /* NUTRIPULSE SPOTLIGHT */
+  .spotlight{
+    background:linear-gradient(155deg,var(--blue) 0%,var(--teal) 100%);
+    color:#fff;
+  }
+  .spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  @media(max-width:860px){.spot-grid{grid-template-columns:1fr;}}
+  .spotlight .eyebrow{color:#eaf1ff;}
+  .spotlight h2{color:#fff;font-size:30px;margin:10px 0 16px;}
+  .spotlight p{font-family:'Helvetica Neue',Arial,sans-serif;color:#eaf4ee;font-size:15.5px;margin-bottom:14px;}
+  .spot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 30px;}
+  .spot-stat{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+    border-radius:8px;padding:16px;text-align:center;
+  }
+  .spot-stat b{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:22px;color:var(--gold-2);}
+  .spot-stat span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#eaf4ee;}
+  .phone-mock{
+    background:var(--navy);border-radius:26px;border:6px solid #0a1830;
+    max-width:280px;margin:0 auto;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.25);
+  }
+  .phone-mock .bar{height:26px;display:flex;align-items:center;justify-content:center;}
+  .phone-mock .bar span{width:60px;height:5px;background:rgba(255,255,255,.25);border-radius:3px;}
+  .phone-screen{background:#0f2a44;padding:20px 16px 26px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .phone-screen h4{color:#fff;font-size:16px;margin-bottom:4px;}
+  .phone-screen small{color:#9fb3cc;font-size:11.5px;}
+  .phone-card{background:rgba(255,255,255,.09);border-radius:10px;padding:12px;margin-top:14px;}
+  .phone-card b{color:var(--gold-2);font-size:12.5px;}
+  .phone-card p{color:#cfe0ee;font-size:11.5px;margin-top:4px;}
+
+  /* WRITING / BLOG */
+  .writing{background:var(--paper);}
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+  .filter-btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:700;
+    padding:9px 18px;border-radius:20px;border:1.5px solid var(--line);
+    background:var(--paper);color:var(--ink-soft);cursor:pointer;transition:.2s;
+  }
+  .filter-btn.active,.filter-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:860px){.post-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.post-grid{grid-template-columns:1fr;}}
+  .post{
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column;transition:.2s;
+  }
+  .post:hover{box-shadow:0 10px 24px rgba(11,31,58,.08);transform:translateY(-2px);}
+  .post-cover{
+    height:120px;display:flex;align-items:flex-end;padding:12px;
+  }
+  .post-cover.health{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);}
+  .post-cover.environment{background:linear-gradient(135deg,var(--teal) 0%,#0b5142 100%);}
+  .post-cover.behaviour{background:linear-gradient(135deg,var(--coral) 0%,#b8402f 100%);}
+  .post-cat{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.05em;color:#fff;
+    background:rgba(0,0,0,.28);padding:4px 10px;border-radius:20px;
+  }
+  .post-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .post-body h3{font-size:16px;margin-bottom:8px;}
+  .post-body p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);flex:1;}
+  .post-link{
+    margin-top:14px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;
+    font-weight:700;color:var(--blue);
+  }
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--blue-soft);}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:860px){.test-grid{grid-template-columns:1fr;}}
+  .test-card{
+    background:var(--paper);border-radius:var(--radius);padding:26px;
+    border:1px solid var(--line);position:relative;
+  }
+  .test-quote{color:var(--blue);font-size:34px;font-family:Georgia,serif;line-height:1;margin-bottom:8px;}
+  .test-card p{font-size:14.5px;color:#333;font-style:italic;margin-bottom:18px;}
+  .test-person{display:flex;align-items:center;gap:12px;}
+  .test-avatar{
+    width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold-2);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:14px;
+  }
+  .test-person b{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:var(--navy);}
+  .test-person span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);}
+  .test-note{
+    text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;
+    color:var(--ink-soft);margin-top:24px;
+  }
+
+  /* ADVOCACY */
+  .advocacy{background:var(--navy);color:#fff;}
+  .adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  @media(max-width:860px){.adv-grid{grid-template-columns:1fr;}}
+  .advocacy .eyebrow{color:var(--blue-2);}
+  .advocacy h2{color:#fff;font-size:30px;margin:10px 0 16px;}
+  .advocacy p{font-family:'Helvetica Neue',Arial,sans-serif;color:#cfd6e4;font-size:15.5px;margin-bottom:14px;}
+  .adv-list{list-style:none;margin-top:18px;}
+  .adv-list li{
+    display:flex;gap:12px;padding:10px 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;color:#e9ecf3;
+  }
+  .adv-panel{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:12px;padding:30px;
+  }
+  .adv-panel h4{color:var(--gold-2);font-size:15px;margin-bottom:10px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .adv-panel p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:#d5dae5;margin-bottom:16px;}
+
+  /* TRAINING / SERVICES STRIP */
+  .strip{background:linear-gradient(120deg,var(--gold) 0%,var(--gold-2) 100%);}
+  .strip .wrap{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:36px 24px;
+  }
+  .strip h3{color:var(--navy);font-size:20px;}
+  .strip p{font-family:'Helvetica Neue',Arial,sans-serif;color:#3c2e0f;font-size:13.5px;}
+
+  /* CONTACT */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info p{font-family:'Helvetica Neue',Arial,sans-serif;color:var(--ink-soft);font-size:14.5px;margin-bottom:20px;}
+  .info-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-family:'Helvetica Neue',Arial,sans-serif;}
+  .info-row b{display:block;color:var(--navy);font-size:14px;}
+  .info-row span,.info-row a{color:var(--ink-soft);font-size:13.5px;}
+  .info-row a:hover{color:var(--blue);}
+  form{background:var(--blue-soft);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:700;
+    color:var(--navy);margin-bottom:6px;
+  }
+  .field input,.field select,.field textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff;
+  }
+  .field textarea{resize:vertical;min-height:100px;}
+  form .btn{width:100%;justify-content:center;margin-top:6px;}
+
+  /* FOOTER */
+  footer{background:#081527;color:#c9d1e0;padding:48px 0 26px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:34px;}
+  @media(max-width:700px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{color:#fff;font-size:14px;margin-bottom:14px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  footer p,footer li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:#9aa5bb;}
+  footer ul{list-style:none;}
+  footer li{padding:6px 0;}
+  footer a:hover{color:var(--blue-2);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:#7c869c;
+  }
+  .socials{display:flex;gap:12px;}
+  .socials a{
+    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#c9d1e0;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;transition:.2s;
+  }
+  .socials a:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Enosis<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#nutripulse">NutriPulse</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#advocacy">Advocacy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta-desktop">Book a consultation</a>
+    <button class="menu-btn">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Africa's nutrition &amp; digital health platform</p>
+      <h1>Nourishing lives through <em>science</em>, <em>technology</em> and <em>compassion</em></h1>
+      <p class="lead">
+        I'm Enosis Kamadi — a Clinical Nutritionist and Dietitian, nutrition researcher, TVET technical trainer, and founder of NutriPulse. I work at the intersection of clinical care, health-sciences education, digital innovation, and community mental wellbeing across Africa.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a consultation</a>
+        <a href="https://nutripulse.vercel.app/" target="_blank" rel="noopener" class="btn btn-outline">Explore NutriPulse &#8599;</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Clinical Nutrition</span>
+        <span class="tag">Dietetics</span>
+        <span class="tag">Nutrition Research</span>
+        <span class="tag">TVET Trainer</span>
+        <span class="tag">Digital Health &amp; AI</span>
+        <span class="tag">Mental Health Advocacy</span>
+      </div>
+    </div>
+    <div>
+      <div class="portrait-frame">
+        <span class="initials">EK</span>
+        <div class="cap">Clinical Nutritionist &amp; Dietitian · Founder, NutriPulse · KNDI Registered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>
+      <h3>Available for consultations, training engagements and speaking</h3>
+      <p>Clinical nutrition · TVET curriculum development · research collaboration · corporate wellness talks</p>
+    </div>
+    <a href="#contact" class="btn btn-outline-dark">Get in touch</a>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2 style="font-size:28px;margin:10px 0 18px;">A career built across clinic, classroom and community</h2>
+      <p>My work spans clinical nutrition practice, dietetics, and public health research, alongside a parallel career training the next generation of nutrition and dietetics professionals under Kenya's CBET/CDACC framework. I currently deliver a Level 6 Diploma in Nutrition and Dietetics, and I am completing my BSc in Human Nutrition and Dietetics, registered with the Kenya Nutritionists and Dietitians Institute (KNDI).</p>
+      <p>My clinical grounding comes from attachments at county referral and sub-county hospitals, where I worked directly on malnutrition management, nutrition care planning, and patient counselling. That clinical lens now shapes everything I build — from the curriculum materials I develop for trainee dietitians to the digital tools I design for people across the continent.</p>
+      <p>Beyond the clinic and classroom, I write on health, environment, and human-social behaviour, and I champion digital health and AI as tools for closing Africa's nutrition and mental-health service gaps — while mentoring peers and advocating for the wellbeing of people living with mental and psychosocial conditions.</p>
+    </div>
+    <div>
+      <ul class="cred-list">
+        <li><span class="cred-dot"></span><div><b>BSc Human Nutrition &amp; Dietetics</b><span>Kenya Methodist University (KEMU)</span></div></li>
+        <li><span class="cred-dot"></span><div><b>KNDI Registered Nutritionist</b><span>Kenya Nutritionists and Dietitians Institute</span></div></li>
+        <li><span class="cred-dot"></span><div><b>TVET Technical Trainer</b></div></li>
+        <li><span class="cred-dot"></span><div><b>Clinical Attachment/Internship Experience</b><span>Bungoma County Referral Hospital &amp; Bumula Sub-County Hospital</span></div></li>
+        <li><span class="cred-dot"></span><div><b>Founder, NutriPulse</b><span>AI-powered digital nutrition platform for Africa</span></div></li>
+        <li><span class="cred-dot"></span><div><b>Medical Representative</b><span>4Life Research Kenya Ltd</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What I do</p>
+      <h2>Expertise across the nutrition value chain</h2>
+      <p>Clinical care, education, research and innovation working together to improve nutrition outcomes.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">CN</div>
+        <h3>Clinical Nutrition</h3>
+        <p>Nutritional assessment, diagnosis and individualized care plans for patients, using the Nutrition Care Process and MOH-aligned protocols.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">D</div>
+        <h3>Dietetics</h3>
+        <p>Medical nutrition therapy, meal planning, and dietary management for malnutrition, chronic disease and special populations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">R</div>
+        <h3>Research</h3>
+        <p>Nutritional epidemiology and applied research, including work on cultural influences on food choices among Nairobi's elderly population.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">T</div>
+        <h3>Technical Training</h3>
+        <p>CBET/CDACC-compliant curriculum design, learner materials and practical assessment guides for TVET nutrition and dietetics programmes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">AI</div>
+        <h3>Digital Health &amp; AI</h3>
+        <p>Building and advocating for AI-powered health technology that makes personalized nutrition guidance accessible across Africa.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">MH</div>
+        <h3>Mental Health &amp; Wellbeing</h3>
+        <p>Peer mentorship and advocacy for the general and community wellbeing of individuals living with mental and psychosocial conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spotlight" id="nutripulse">
+  <div class="wrap spot-grid">
+    <div>
+      <p class="eyebrow">Founder spotlight</p>
+      <h2>NutriPulse — nutrition intelligence for Africa</h2>
+      <p>NutriPulse is an AI-powered digital nutrition platform I founded to close the personalized-nutrition gap across Africa. It combines a growing pan-African food database, personalized meal planning and health tracking, built around the realities of diverse diets, budgets and lifestyles from Nairobi to Africa and Beyond.</p>
+      <p>The platform reflects everything I care about professionally: clinical rigor, cultural relevance, and technology that actually reaches the people who need it — wherever they are on the continent.</p>
+      <div class="spot-stats">
+        <div class="spot-stat"><b>AI</b><span>Personalized guidance</span></div>
+        <div class="spot-stat"><b>Pan-African</b><span>Expanding food database</span></div>
+        <div class="spot-stat"><b>Mobile</b><span>Mobile money enabled</span></div>
+      </div>
+      <a href="https://nutripulse.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Visit NutriPulse &#8599;</a>
+    </div>
+    <div>
+      <div class="phone-mock">
+        <div class="bar"><span></span></div>
+        <div class="phone-screen">
+          <h4>NutriPulse</h4>
+          <small>Your daily nutrition companion</small>
+          <div class="phone-card"><b>Today's plan</b><p>Ugali, sukuma wiki &amp; omena — balanced for your goals</p></div>
+          <div class="phone-card"><b>AI insight</b><p>Your iron intake is trending low this week</p></div>
+          <div class="phone-card"><b>African foods</b><p>Local foods across regions mapped to nutrient values</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="writing" id="writing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Writing</p>
+      <h2>Essays &amp; articles</h2>
+      <p>I write across health, environment, and human-social behaviour — exploring how science, culture and systems shape wellbeing.</p>
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="health">Health</button>
+      <button class="filter-btn" data-filter="environment">Environment</button>
+      <button class="filter-btn" data-filter="behaviour">Human &amp; social behaviour</button>
+    </div>
+    <div class="post-grid" id="postGrid">
+      <div class="post" data-cat="health">
+        <div class="post-cover health"><span class="post-cat">Health</span></div>
+        <div class="post-body">
+          <h3>Rethinking malnutrition management in African counties</h3>
+          <p>On integrating IMAM protocols with community-level nutrition education for lasting impact.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+      <div class="post" data-cat="environment">
+        <div class="post-cover environment"><span class="post-cat">Environment</span></div>
+        <div class="post-body">
+          <h3>Food systems and climate resilience in East Africa</h3>
+          <p>How household practices like rainwater harvesting and composting connect to nutrition security.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+      <div class="post" data-cat="behaviour">
+        <div class="post-cover behaviour"><span class="post-cat">Human &amp; social behaviour</span></div>
+        <div class="post-body">
+          <h3>Culture, food choice and the elderly in Nairobi</h3>
+          <p>Findings from ongoing research on how tradition shapes dietary decisions in later life.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+      <div class="post" data-cat="health">
+        <div class="post-cover health"><span class="post-cat">Health</span></div>
+        <div class="post-body">
+          <h3>Why nutrition care belongs in mental health treatment</h3>
+          <p>Exploring the evidence linking diet quality to mood, cognition and recovery outcomes.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+      <div class="post" data-cat="environment">
+        <div class="post-cover environment"><span class="post-cat">Environment</span></div>
+        <div class="post-body">
+          <h3>Can Africa feed itself sustainably by 2050?</h3>
+          <p>A look at indigenous crops, soil health and food sovereignty across the continent.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+      <div class="post" data-cat="behaviour">
+        <div class="post-cover behaviour"><span class="post-cat">Human &amp; social behaviour</span></div>
+        <div class="post-body">
+          <h3>Digital trust: why Africans hesitate to adopt health apps</h3>
+          <p>Unpacking the social and behavioural barriers standing between communities and digital health tools.</p>
+          <span class="post-link">Read the article &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Testimonials</p>
+      <h2>What people say</h2>
+      <p>Placeholder testimonials — replace with real feedback from clients, students and collaborators.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p>Enosis brings clinical precision and real warmth to every nutrition consultation. My care plan finally made sense.</p>
+        <div class="test-person">
+          <div class="test-avatar">JM</div>
+          <div><b>J. Mwangi</b><span>Clinical nutrition client</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p>The most thorough CBET-aligned learning materials our diploma cohort has used. Practical, current and easy to teach from.</p>
+        <div class="test-person">
+          <div class="test-avatar">FT</div>
+          <div><b>Fellow trainer</b><span>TVET colleague</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p>NutriPulse is exactly the kind of locally-relevant health tech Africa needs. Simple, smart and genuinely useful.</p>
+        <div class="test-person">
+          <div class="test-avatar">NP</div>
+          <div><b>NutriPulse user</b><span>Early adopter</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="test-note">Testimonials shown are placeholders. Swap in verified quotes before publishing.</p>
+  </div>
+</section>
+
+<section class="advocacy" id="advocacy">
+  <div class="wrap adv-grid">
+    <div>
+      <p class="eyebrow">Community &amp; advocacy</p>
+      <h2>Mental health &amp; community wellbeing</h2>
+      <p>Alongside my clinical and academic work, I serve as a peer mentor and advocate for the general and community wellbeing of individuals — with particular attention to those living with mental and psychosocial disorders.</p>
+      <p>I believe nutrition, mental health and community support are deeply linked, and I work to bring that integrated view into training, research and everyday conversation.</p>
+      <ul class="adv-list">
+        <li>&#8226; Peer mentorship for individuals navigating mental health challenges</li>
+        <li>&#8226; Community wellbeing advocacy and awareness</li>
+        <li>&#8226; Integrating nutrition and mental health in care and training</li>
+      </ul>
+    </div>
+    <div class="adv-panel">
+      <h4>Work with me on advocacy</h4>
+      <p>Open to speaking engagements, peer-mentorship partnerships, and community wellbeing initiatives focused on mental health and nutrition.</p>
+      <a href="#contact" class="btn btn-blue">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow">Get in touch</p>
+      <h2 style="font-size:28px;margin:10px 0 16px;">Let's work together</h2>
+      <p>Whether it's a clinical consultation, a curriculum project, a speaking engagement, or a conversation about NutriPulse — I'd love to hear from you.</p>
+      <div class="info-row"><b>Phone</b><a href="tel:+254799420057">+254 799 420 057</a></div>
+      <div class="info-row"><b>Email</b><a href="mailto:kamadienosis@gmail.com">kamadienosis@gmail.com</a></div>
+      <div class="info-row"><b>LinkedIn</b><a href="https://www.linkedin.com/in/enosis-kamadi" target="_blank" rel="noopener">linkedin.com/in/enosis-kamadi</a></div>
+      <div class="info-row"><b>Twitter (X)</b><a href="https://x.com/_Kamadi" target="_blank" rel="noopener">@_Kamadi</a></div>
+      <div class="info-row"><b>NutriPulse</b><a href="https://nutripulse.vercel.app/" target="_blank" rel="noopener">nutripulse.vercel.app</a></div>
+      <div class="info-row"><b>Based in</b><span> Nairobi, Kenya</span></div>
+    </div>
+    <form action="mailto:kamadienosis@gmail.com" method="POST" enctype="text/plain">
+      <div class="field"><label>Full name</label><input type="text" name="name" required placeholder="Your name"></div>
+      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
+      <div class="field">
+        <label>Reason for contact</label>
+        <select name="reason">
+          <option>Clinical consultation</option>
+          <option>Training / curriculum collaboration</option>
+          <option>Research collaboration</option>
+          <option>NutriPulse inquiry</option>
+          <option>Speaking / advocacy engagement</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label>Message</label><textarea name="message" required placeholder="Tell me a little about what you need..."></textarea></div>
+      <button type="submit" class="btn btn-blue">Send message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;">Enosis<span>.</span></div>
+        <p>Clinical Nutritionist, Dietitian, Researcher, TVET Trainer and Founder of NutriPulse — advancing nutrition science and digital health across Africa.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#nutripulse">NutriPulse</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/enosis-kamadi" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://x.com/_Kamadi" target="_blank" rel="noopener" aria-label="X / Twitter">X</a>
+          <a href="https://nutripulse.vercel.app/" target="_blank" rel="noopener" aria-label="NutriPulse">NP</a>
+        </div>
+        <p style="margin-top:16px;">+254 799 420 057<br>kamadienosis@gmail.com</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Enosis Kamadi. All rights reserved.</span>
+      <span>Built for clinical nutrition, education &amp; digital health impact.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var posts = document.querySelectorAll('#postGrid .post');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      posts.forEach(function(post){
+        if(filter === 'all' || post.getAttribute('data-cat') === filter){
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
