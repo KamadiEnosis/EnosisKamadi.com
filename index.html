@@ -728,6 +728,41 @@
     });
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
+  const SUPABASE_ANON_KEY = "your-anon-public-key";
+  const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector("button[type=submit]");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    status.textContent = "";
+
+    const { error } = await db.from("messages").insert({
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      reason: form.reason.value,
+      message: form.message.value.trim(),
+    });
+
+    if (error) {
+      status.style.color = "#c0392b";
+      status.textContent = "Something went wrong. Please email kamadienosis@gmail.com directly.";
+      btn.disabled = false;
+      btn.textContent = "Send message";
+    } else {
+      status.style.color = "#0f6e56";
+      status.textContent = "Thank you — your message has been sent. I'll be in touch shortly.";
+      form.reset();
+      btn.textContent = "Sent ✓";
+    }
+  });
+</script>
 </body>
 </html>
